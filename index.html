@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://kit.fontawesome.com/aa78ddd3d6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <title>to do list</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <img src="./Todoist_logo.png" alt="" />
+      </div>
+      <ul class="main_lists">
+        <form class="form">
+          <div class="form__row">
+            <label class="form__label">Select importance</label>
+            <select class="form__input form__input--type-importance">
+              <option value="" disabled selected>Select</option>
+
+              <option value="very-important">Very important</option>
+              <option value="less-important">Less important</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label form__label--description"
+              >Description</label
+            >
+            <input
+              class="form__input form__input--description"
+              placeholder="enter text"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label form__label--date">Due-Date</label>
+            <input
+              type="date"
+              class="form__input form__input--date"
+              placeholder="mm/dd/yy"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label form__label--completion"
+              >Completion</label
+            >
+            <select class="form__input form__input--type-completion">
+              <option value="" disabled selected>Select</option>
+
+              <option value="completed">Completed</option>
+              <option value="in-progress">In-progress</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div class="btn__part">
+            <button class="form__btn btn__submit">Add Task</button>
+            <button class="form__btn btn__completed">View Completed</button>
+            <button class="form__btn btn__delete">Delete Cancelled</button>
+          </div>
+        </form>
+
+        <li class="list">
+          <h2 class="task__title">
+            <i class="fa-regular fa-envelope"></i> Reply emails
+          </h2>
+          <div class="list__details">
+            <span class="list__icon">✔️</span>
+            <span class="list__value">August 02</span>
+          </div>
+          <div class="list__details">
+            <span class="list__icon"></span>
+            <span class="list__value">🔔 Very Important</span>
+          </div>
+          <div class="list__details">
+            <span class="completed">Completed</span>
+          </div>
+        </li>
+
+        <li class="list">
+          <h2 class="task__title">
+            <i class="fa-regular fa-calendar-days"></i> Make schedule
+          </h2>
+          <div class="list__details">
+            <span class="list__icon"><i class="fa-solid fa-spinner"></i></span>
+
+            <span class="list__value"> August 02</span>
+          </div>
+          <div class="list__details">
+            <span class="list__icon"></span>
+            <span class="list__value">🔕 Less Important</span>
+          </div>
+          <div class="list__details">
+            <span class="list__icon"></span>
+            <span class="in-progress">In-Progress</span>
+          </div>
+        </li>
+
+        <li class="list">
+          <h2 class="task__title">
+            <i class="fa-solid fa-handshake"></i> Plan Meetings
+          </h2>
+          <div class="list__details">
+            <span class="list__icon"><i class="fa-solid fa-xmark"></i></span>
+            <span class="list__value">August 02</span>
+          </div>
+          <div class="list__details">
+            <span class="list__value"> 🔕 Less Important</span>
+          </div>
+          <div class="list__details">
+            <span class="cancelled">Cancelled</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div id="second-section"></div>
+    <script defer src="script.js"></script>
+  </body>
+</html>
